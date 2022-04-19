@@ -1,0 +1,18 @@
+{{>/Header}}
+
+
+
+<div class="container" style="margin-top: 80px;">
+    <h2>사용자 목록</h2>
+    
+    <div class="list-group">
+      {{#userList}}
+      <a href="/userInfo/{{id}}" class="list-group-item list-group-item-action">{{username}}</a>
+      {{/userList}}
+    </div>
+    
+  </div>
+  
+{{>/Footer}}
+
+</body>
