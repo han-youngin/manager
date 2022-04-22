@@ -15,9 +15,16 @@ public class ManagerService {
     private final ManagerRepository managerRepository;
 
     public Manager 로그인(LoginDto loginDto) {
-        System.out.println(loginDto);
+
         Manager managerEntity = managerRepository.mLogin(loginDto.getUsername(), loginDto.getPassword());
-        System.out.println("로그인:" + managerEntity);
         return managerEntity;
     }
+
+    // public Manager 로그인(LoginDto loginDto) {
+    // System.out.println(loginDto);
+    // Manager managerEntity = managerRepository.mLogin(loginDto.getUsername(),
+    // loginDto.getPassword());
+    // System.out.println("로그인:" + managerEntity);
+    // return managerEntity;
+    // }
 }

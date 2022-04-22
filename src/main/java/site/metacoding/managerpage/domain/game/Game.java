@@ -6,6 +6,7 @@ import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -28,4 +29,8 @@ public class Game {
 
     @Column(unique = true, nullable = false, length = 30)
     private String gamename;
+
+    @Lob
+    @Column(nullable = false)
+    private java.sql.Blob image;
 }

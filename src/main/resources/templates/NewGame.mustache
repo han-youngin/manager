@@ -7,6 +7,14 @@
       <label for="email">게임 이름:</label>
       <input type="text" class="form-control" id="gamename" placeholder="게임 이름을 입력하세요" name="gamename">
     </div>
+    <form method="post" enctype="multipart/form-data">
+      <div class="button">
+          <label for="chooseFile">
+              등록할 이미지를 선택하세요:
+          </label>
+      </div>
+      <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+  </form>
 
     <button type="submit" class="btn btn-primary" id="btn-create">등록</button>
   </form>

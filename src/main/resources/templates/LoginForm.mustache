@@ -31,5 +31,17 @@
   </form>
 </div>
 
+
+<script>
+ 
+  function usernameRemember() {
+      let cookies = document.cookie.split("=");
+
+      $("#username").val(cookies[1]);
+  }
+  usernameRemember();
+</script>
+
+<script src="/js/login.js"></script>
 </body>
 </html>
