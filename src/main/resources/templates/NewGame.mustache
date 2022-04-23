@@ -2,25 +2,25 @@
 
 <div class="container">
   <h2>신규 게임 등록</h2>
-  <form action="/create" method="POST" >
+  <form action="/create" method="post" enctype="multipart/form-data">
     <div class="form-group">
-      <label for="email">게임 이름:</label>
-      <input type="text" class="form-control" id="gamename" placeholder="게임 이름을 입력하세요" name="gamename">
+      <label>게임 이름:</label>
+      <input type="text" class="form-control" placeholder="게임 이름을 입력하세요" name="name">
     </div>
-    <form method="post" enctype="multipart/form-data">
-      <div class="button">
-          <label for="chooseFile">
-              등록할 이미지를 선택하세요:
-          </label>
-      </div>
-      <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
-  </form>
-
-    <button type="submit" class="btn btn-primary" id="btn-create">등록</button>
+    <div class="form-group">
+      <label>게임 url주소:</label>
+      <input type="text" class="form-control" placeholder="게임 주소를 입력하세요" name="url">
+    </div>
+    <label>
+      등록할 이미지를 선택하세요:
+    </label>
+    <input type="file" name="img">
+    <div>
+      <button type="submit" class="btn btn-primary">등록</button>
+    </div>
   </form>
 </div>
 
-<script src="image.js"></script>
-
 </body>
+
 </html>

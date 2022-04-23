@@ -3,7 +3,6 @@ package site.metacoding.managerpage.service;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.Id;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -14,9 +13,6 @@ import site.metacoding.managerpage.domain.comment.Comment;
 import site.metacoding.managerpage.domain.comment.CommentRepository;
 import site.metacoding.managerpage.domain.question.Question;
 import site.metacoding.managerpage.domain.question.QuestionRepository;
-import site.metacoding.managerpage.domain.user.User;
-import site.metacoding.managerpage.util.FileUpload;
-import site.metacoding.managerpage.web.api.dto.QuestionWriteReqDto;
 
 @RequiredArgsConstructor
 @Service
@@ -60,9 +56,5 @@ public class QuestionService {
     public void 답변하기(Comment comment) {
 
         commentRepository.save(comment);
-    }
-
-    public Comment 답변불러오기() {
-
     }
 }

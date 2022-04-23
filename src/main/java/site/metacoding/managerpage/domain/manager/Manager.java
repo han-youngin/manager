@@ -31,9 +31,6 @@ public class Manager {
     @Column(unique = true, nullable = false, length = 12)
     private String username;
 
-    @Column(unique = true, nullable = false, length = 12)
-    private String nickname;
-
     @Column(nullable = false, length = 20)
     private String password;
 

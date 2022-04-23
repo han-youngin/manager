@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.managerpage.domain.game.Game;
 import site.metacoding.managerpage.service.GameService;
+import site.metacoding.managerpage.web.api.dto.game.NewGameDto;
 
 @RequiredArgsConstructor
 @Controller
@@ -21,17 +22,15 @@ public class GameController {
 
     @GetMapping("/gameList")
     public String gameList(Model model) {
-        List<Game> game = gameService.게임정보();
-        model.addAttribute("gameList", game);
+        List<Game> games = gameService.게임목록가져오기();
+        model.addAttribute("games", games);
         return "/GameList";
     }
 
     @PostMapping("/create")
-    public String addGame(Model model, Game game) {
-        gameService.등록하기(game);
-        List<Game> gameUp = gameService.게임정보();
-        model.addAttribute("gameList", gameUp);
-        return "/GameList";
+    public String addGame(NewGameDto newGameDto) {
+        gameService.게임등록하기(newGameDto);
+        return "redirect:/gameList";
     }
 
 }
