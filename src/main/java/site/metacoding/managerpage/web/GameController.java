@@ -2,8 +2,6 @@ package site.metacoding.managerpage.web;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +16,6 @@ import site.metacoding.managerpage.web.api.dto.game.NewGameDto;
 @Controller
 public class GameController {
     private final GameService gameService;
-    private final HttpSession session;
 
     @GetMapping("/gameList")
     public String gameList(Model model) {

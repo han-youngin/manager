@@ -12,63 +12,77 @@
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/post.css">
 </head>
+
 <body>
-    
+    <input type="hidden" value="{{question.id}}" id="questionId">
+    <div class="d-flex justify-content-between">
+        <div>
+            <a href="/">
+                <div>메인페이지로가기</div>
+            </a>
+        </div>
+        <div>
+            <a href="/s/question/list">
+                <div>질문답변하러가기</div>
+            </a>
+        </div>
+    </div>
     {{#question}}
     <ul class="list-group list-group-flush">
         <li>제목</li>
         <li class="list-group-item">{{title}}</li>
         <li>내용</li>
         <li class="list-group-item">{{content}}</li>
-      </ul>
+    </ul>
     {{/question}}
     {{#question.file}}
     <div class="full">
         <button id="btn-checkImg" class="full mt-3 btn btn-primary input-text">사진 확인하기</button>
     </div>
     {{/question.file}}
+    <br />
 
 
 
-<!--답글-->
-<div class="card">
-    <div class="card-header"><b>답변을 입력하세요</b></div>
-    <form action="/s/question/{{question.id}}/list/comment" method="post" name="content">
-        <div class="card-body">
-            <textarea name="content" class="form-control" rows="1"></textarea>
-        </div>
-        <div class="card-footer">
-            <button type="submit" class="btn btn-primary">등록</button>
-        </div>
-    </form>
-</div>
-<br />
-
-<div class="card">
-    <div class="card-header"><b>답글</b></div>
-    <ul id="reply-box" class="list-group">
-        {{#question.IsComment}}
-        <li class="list-group-item d-flex justify-content-between">
-            <div>{{question.comment.content}}</div>
-            <div class="d-flex">
-                <div class="font-italic">작성자 : 관리자 </div>
+    <!--답글-->
+    <div class="card">
+        <div class="card-header"><b>답변을 입력하세요</b></div>
+        <form action="/s/question/{{question.id}}/list/comment" method="post" name="content">
+            <div class="card-body">
+                <textarea name="content" class="form-control" rows="1"></textarea>
             </div>
-        </li>
-        {{/question.IsComment}}
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">등록</button>
+            </div>
+        </form>
+    </div>
+    <br />
 
-    </ul>
-</div>
-<br />
-<script>
-    $("#btn-checkImg").click(() => {
-        imgCheck();
-    });
+    <div class="card">
+        <div class="card-header"><b>답글</b></div>
+        <ul id="reply-box" class="list-group">
+            {{#question.IsComment}}
+            <li class="list-group-item d-flex justify-content-between">
+                <div>{{question.comment.content}}</div>
+                <div class="d-flex">
+                    <div class="font-italic">작성자 : 관리자 </div>
+                </div>
+            </li>
+            {{/question.IsComment}}
 
-    let imgCheck = () => {
-        let questionId = $("#questionId").val();
-        window.open(`/s/question/checkImg/${questionId}`, '이미지', 'location=no,status=no,scrollbars=yes');
-    }
-</script>
+        </ul>
+    </div>
+    <br />
+    <script>
+        $("#btn-checkImg").click(() => {
+            imgCheck();
+        });
+
+        let imgCheck = () => {
+            let questionId = $("#questionId").val();
+            window.open(`/s/question/checkImg/${questionId}`, '이미지', 'location=no,status=no,scrollbars=yes');
+        }
+    </script>
 </body>
 
 </html>

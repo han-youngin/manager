@@ -2,8 +2,6 @@ package site.metacoding.managerpage.web;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +16,6 @@ import site.metacoding.managerpage.service.UserService;
 public class UserController {
 
     private final UserService userService;
-    private final HttpSession session;
 
     // 유저 정보 불러오기
     @GetMapping("/userInfo")

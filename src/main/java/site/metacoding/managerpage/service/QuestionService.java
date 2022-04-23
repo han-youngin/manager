@@ -41,17 +41,6 @@ public class QuestionService {
         }
     }
 
-    // public void 답글달기(Comment comment, Integer id) {
-    // Optional<Question> questionOp = postRepository.findById(id);
-    // if (questionOp.isPresent()) {
-    // Question questionEntity = questionOp.get();
-    // comment.setQuestion(questionEntity);
-    // commentRepository.save(comment);
-    // } else {
-    // throw new RuntimeException("질문을 찾을수가 없습니다.");
-    // }
-    // }
-
     @Transactional
     public void 답변하기(Comment comment, Integer questionId) {
 
@@ -66,7 +55,6 @@ public class QuestionService {
 
         commentRepository.save(comment);
     }
-<<<<<<< HEAD
 
     public Comment 답변불러오기(Integer questionId) {
         Optional<Comment> commentOp = commentRepository.findById(questionId);
@@ -76,6 +64,4 @@ public class QuestionService {
             throw new RuntimeException("답변을 찾을 수 없습니다.");
         }
     }
-=======
->>>>>>> 8f6b0ce337f388c8273f9f2a72c48dc9edd9ce67
 }

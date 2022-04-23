@@ -1,7 +1,5 @@
 package site.metacoding.managerpage.web.api.dto.user;
 
-import javax.persistence.Transient;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

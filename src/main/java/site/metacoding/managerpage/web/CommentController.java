@@ -2,9 +2,7 @@ package site.metacoding.managerpage.web;
 
 import javax.servlet.http.HttpSession;
 
-import org.springframework.data.convert.ReadingConverter;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 

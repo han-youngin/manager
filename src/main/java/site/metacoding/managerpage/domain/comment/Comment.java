@@ -19,7 +19,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import site.metacoding.managerpage.domain.manager.Manager;
 import site.metacoding.managerpage.domain.question.Question;
-import site.metacoding.managerpage.domain.user.User;
 
 @AllArgsConstructor
 @NoArgsConstructor

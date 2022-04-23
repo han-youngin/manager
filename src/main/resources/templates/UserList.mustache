@@ -3,16 +3,23 @@
 
 
 <div class="container">
-    <h2>사용자 목록</h2>
-    
-    <div class="list-group">
-      {{#userList}}
-      <a href="/userInfo/{{id}}" class="list-group-item list-group-item-action">{{username}}</a>
-      {{/userList}}
-    </div>
-    
+  <h2>사용자 목록</h2>
+
+  <div class="list-group">
+    {{#userList}}
+    <a href="/userInfo/{{id}}" class="list-group-item list-group-item-action">{{username}}</a>
+    {{/userList}}
   </div>
-  
-{{>/Footer}}
+
+</div>
+
+<ul class="pagination justify-content-center">
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+</ul>
 
 </body>
+
+</html>

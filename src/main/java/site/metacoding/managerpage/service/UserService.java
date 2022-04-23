@@ -3,15 +3,11 @@ package site.metacoding.managerpage.service;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.Id;
-
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.managerpage.domain.user.User;
 import site.metacoding.managerpage.domain.user.UserRepository;
-import site.metacoding.managerpage.web.api.dto.user.LoginDto;
 
 @RequiredArgsConstructor
 @Service
