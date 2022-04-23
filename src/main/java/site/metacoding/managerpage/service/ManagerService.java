@@ -15,7 +15,6 @@ public class ManagerService {
     private final ManagerRepository managerRepository;
 
     public Manager 로그인(LoginDto loginDto) {
-
         Manager managerEntity = managerRepository.mLogin(loginDto.getUsername(), loginDto.getPassword());
         return managerEntity;
     }
