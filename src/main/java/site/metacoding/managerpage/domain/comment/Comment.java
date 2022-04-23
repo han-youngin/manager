@@ -17,6 +17,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import site.metacoding.managerpage.domain.manager.Manager;
 import site.metacoding.managerpage.domain.question.Question;
 import site.metacoding.managerpage.domain.user.User;
 
@@ -33,7 +34,7 @@ public class Comment {
 
     @JoinColumn(name = "userId")
     @ManyToOne
-    private User user;
+    private Manager manager;
 
     @JoinColumn(name = "questionId")
     @OneToOne // 자동으로 Eager전략
@@ -41,4 +42,5 @@ public class Comment {
 
     @CreatedDate
     private LocalDateTime createDate;
+
 }

@@ -45,13 +45,4 @@ public class QuestionController {
         return "question/img";
     }
 
-    // 매니저 답글달기.
-    @PostMapping("/s/question/{id}/list/comment")
-    public String questionComment(Model model, Comment comment, Integer id) {
-        questionService.답변하기(comment);
-        List<Comment> comments = questionService.질문가져오기(id);
-        model.addAttribute("comments", comments);
-        return "redirect:/s/question/";
-    }
-
 }

@@ -57,12 +57,26 @@ public class QuestionService {
     // }
 
     @Transactional
-    public void 답변하기(Comment comment) {
+    public void 답변하기(Comment comment, Integer questionId) {
+
+        Optional<Question> questionOp = postRepository.findById(questionId);
+
+        if (questionOp.isPresent()) {
+            Question questionEntity = questionOp.get();
+            comment.setQuestion(questionEntity);
+        } else {
+            throw new RuntimeException("없는 게시글에 댓글을 작성할 수 없습니다");
+        }
 
         commentRepository.save(comment);
     }
 
-    public Comment 답변불러오기() {
-
+    public Comment 답변불러오기(Integer questionId) {
+        Optional<Comment> commentOp = commentRepository.findById(questionId);
+        if (commentOp.isPresent()) {
+            return commentOp.get();
+        } else {
+            throw new RuntimeException("답변을 찾을 수 없습니다.");
+        }
     }
 }
