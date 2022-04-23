@@ -8,8 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.AllArgsConstructor;
@@ -28,9 +26,12 @@ public class Game {
     private Integer id;
 
     @Column(unique = true, nullable = false, length = 30)
-    private String gamename;
+    private String name;
 
     @Lob
     @Column(nullable = false)
-    private java.sql.Blob image;
+    private String image;
+
+    @Column(unique = true, nullable = false, length = 100)
+    private String url;
 }

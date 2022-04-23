@@ -1,17 +1,42 @@
 {{>/Header}}
+<style>
+  .box-game {
+    width: 30%;
+    height: 200px;
+  }
 
+  .box-game-name {
+    width: 100%;
+    height: 20%;
+  }
+
+  .box-game-img {
+    width: 100%;
+    height: 80%;
+  }
+
+  .full {
+    width: 100%;
+    height: 100%;
+  }
+</style>
 
 <div class="container">
   <h2>게임 목록</h2>
-
-  {{#gameList}}
-  <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action">{{gamename}}</a>
+  <div class="d-flex justify-content-between">
+    {{#games}}
+    <div class="box-game">
+      <div class="box-game-name">{{name}}</div>
+      <div class="box-game-img">
+        <img src="/upload/{{image}}" class="full">
+      </div>
+    </div>
+    {{/games}}
   </div>
-  {{/gameList}}
 </div>
 
 
 
 </body>
+
 </html>
