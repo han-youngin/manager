@@ -82,3 +82,6 @@ implementation 'org.springframework.boot:spring-boot-starter-validation'
 - id, name, image, url => game
 - id, createDate, email, password, updateDate, username => manager
 -------
+### 게임페이지 서버
+- [게임페이지 서버 깃](https://github.com/jinyongkwon/green-teamproject-v1)
+-------
