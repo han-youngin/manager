@@ -8,6 +8,8 @@ import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -16,6 +18,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import site.metacoding.managerpage.domain.ranking.Ranking;
+import site.metacoding.managerpage.domain.rpg.Rpg;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -34,13 +38,22 @@ public class User {
     @Column(unique = true, nullable = false, length = 12)
     private String nickname;
 
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 100)
     private String password;
 
-    @Column(nullable = false, length = 30)
+    @Column(unique = true, nullable = false, length = 30)
     private String email;
 
+    @Column(nullable = false)
     private Integer coin;
+
+    @OneToOne
+    @JoinColumn(name = "rpgId")
+    private Rpg rpg;
+
+    @OneToOne
+    @JoinColumn(name = "rankingId")
+    private Ranking ranking;
 
     @Column(nullable = false)
     @CreatedDate

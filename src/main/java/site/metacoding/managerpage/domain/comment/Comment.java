@@ -31,7 +31,7 @@ public class Comment {
     private Integer id;
     private String content;
 
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "managerId")
     @ManyToOne
     private Manager manager;
 
